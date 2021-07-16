@@ -1,10 +1,12 @@
 window.addEventListener('load', () => {
+
     function getElement(id) {
         return document.getElementById(id);
     }
 
     let humidity = getElement('current-humidity'),
         pressure = getElement('current-pressure'),
+        currentTime = getElement('current-time'),
         temperature = getElement('current-temperature'),
         windSpeed = getElement('current-wind-speed'),
         getWeatherButton = getElement('getWeather'),
@@ -71,6 +73,7 @@ window.addEventListener('load', () => {
             })
             .catch(function (error) {
                 currentLocation.innerHTML = `'${cityValue.value}' is undefined`;
+                cityValue.value = '';
                 cityValue.style.borderColor = 'red';
                 main.classList.toggle('main-unvisible');
                 preloader.classList.toggle('preloader-unvisible');
@@ -91,12 +94,15 @@ window.addEventListener('load', () => {
     }
 
     function displayData(data) {
-        cityValue.value = '';
         humidity.innerHTML = 'Humidity: ' + data.main.humidity + '%';
         pressure.innerHTML = 'Pressure: ' + convertPressure(data);
         temperature.innerHTML = 'Temperature: ' + convertTemp(data);
         windSpeed.innerHTML = 'Wind speed: ' + data.wind.speed + 'Km/h';
         currentLocation.innerHTML = `Your location is ${data.name}`;
+        cityValue.value = '';
+        setInterval(() => {
+            currentTime.innerHTML = `Your time: ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+        }, 0)
     }
 
     function speakAsisstant() {

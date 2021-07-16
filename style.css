@@ -43,6 +43,18 @@ main {
           flex-direction: column;
   font-size: 25px;
   opacity: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.fade {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .main-unvisible {
@@ -54,8 +66,9 @@ h2 {
   text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  color: black;
+  color: white;
   margin-bottom: 40px;
+  font-weight: 100;
 }
 
 .red-title {
@@ -81,14 +94,16 @@ ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: white;
 }
 
 #city-value {
+  background: transparent;
   font-size: 40px;
   text-align: center;
   border-radius: 10px;
-  border: 3px solid seagreen;
-  color: seagreen;
+  border: 3px solid white;
+  color: white;
   outline: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -112,7 +127,8 @@ ul li {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
-  margin: 0px 5px;
+  margin-left: 20px;
+  color: white;
 }
 
 #micro:hover,
@@ -120,7 +136,8 @@ ul li {
   color: seagreen;
 }
 
-#micro:active {
+#micro:active,
+#navi:active {
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
 }
@@ -136,8 +153,8 @@ ul li {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#9eefe1), color-stop(51%, #4830f0), to(#9eefe1));
-  background-image: linear-gradient(to right, #9eefe1 0%, #4830f0 51%, #9eefe1 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(white), color-stop(51%, seagreen), to(white));
+  background-image: linear-gradient(to right, white 0%, seagreen 51%, white 100%);
   background-size: 200% auto;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -274,9 +291,8 @@ ul li {
     font-weight: 600;
   }
   #city-value {
-    margin-top: 5px;
-    font-size: 25px;
-    margin-top: 15px;
+    font-size: 30px;
+    max-width: 300px;
   }
   .gradient-button {
     padding: 20px 20px;
@@ -288,7 +304,7 @@ ul li {
   }
   #micro,
   #navi {
-    font-size: 30px;
+    font-size: 35px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     cursor: pointer;
