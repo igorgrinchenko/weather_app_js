@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css"
+        integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css"
+        integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <main id="current-weather-details">
+        <h2 id="current-location"></h2>
+        <div id="search-area">
+            <input id="city-value" type="text" placeholder="Enter your location" contenteditable>
+            <i id="micro" class="fas fa-microphone"></i>
+            <i id="navi" class="fas fa-location-arrow"></i>
+        </div>
+        <ul id="info">
+            <li id="current-humidity">--</li>
+            <li id="current-pressure">--</li>
+            <li id="current-temperature">--</li>
+            <li id="current-wind-speed">--</li>
+        </ul>
+        <button class="gradient-button" id="getWeather">Get Current Weather!</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
